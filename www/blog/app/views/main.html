@@ -4,14 +4,37 @@
     <p>
     Voilà la page principale.
     </p>
+
+    <p>J'ai créé le service "blog" via </p>
+    <pre><code>yo angular:service blog</code></pre>
     <p>
-    Voir le fichier app/controllers/main.js pour voir "$scope.things" assigné. 
-    Ci-dessous, on a simplement afficher "things" (au format json).
+    Cela a créé app/services/blog.js. Allez voir le fichier.
     </p>
-    <pre>{{ things | json}}</pre>
 
     <p>
-    Passer à l'étape 2 via
-    <pre><code>git checkout -f step2 </code></pre>
+    Ce service retourne un objet contenant deux méthodes pour aller chercher des données sur un serveur web.
     </p>
+
+    <p>
+    J'ai entrée un post de blog "manuellement" dans le fichier db/blog.json.
+    </p>
+
+    <p>
+    Enfin, dans le fichier "app/scripts/controllers/main.js" j'ai ajouté la dépendance au service "blog" et j'apppelle 
+    <code>getPosts()</code>
+    </p>
+    <pre><code>{{ posts | json }}</code></pre>
+
+    <p>
+    <strong>Attention</strong>, $resource retourne des promesses ! mais angular va interpréter le résultat au fur et à mesure
+    que les promesses sont résolues.
+    </p>
+
+    <p>Ici, on va chercher le post 1, via <code>getPost(1)</code></p>
+    <pre><code>{{ firstPost | json }}</code>
+    </pre>
+
+    <p>On peut passer à step 3</p>
+    <pre><code>git checkout -f step3</code></pre>
+
 </div>
