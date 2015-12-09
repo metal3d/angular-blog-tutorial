@@ -4,15 +4,16 @@
     <p>
     Voilà la page principale.
     </p>
-    <p>Maintenant on va lister les posts, en utilisant <code>Blog.getPosts</code> mais on va mettre en forme la liste</p>
-    <p>L'idée est d'utiliser <code>ng-repeat</code></p>
-
-    <p><code>b in posts</code> assigne un post dans "b" à chaque entreé de <code>$scope.posts</code></p>
-    <p>Tout se trouve dans app/scripts/main.js</p>
-    </pre>
+    <p>J'ai ajouté une route "blog/:id" pour afficher un ticket de blog</p>
+    <pre><code>yo angular:route blog</code></pre>
+    <p>Cela a créé controllers/blog.js et views/blog.html</p>
+    <p>La route "blog" a aussi été ajoutée dans app.js - j'ai modifié la route pour accepter un "id" -&gt; <code>/blog/:id</code></p>
+    <p>On modifie notre liste pour les transformer en lien</p>
     <ul>
-        <li ng-repeat="b in posts">{{b.title}}</li>
+        <li ng-repeat="post in posts"><a ng-href="#/blog/{{post.id}}">{{post.title}}</a></li>
     </ul>
-    <p>On va passer à l'étape 4 pour faire une vue "blog post"</p>
-    <pre><code>git checkout -f step4</code></pre>
+
+    <p>Reste à créer un formulaire pour ajouter des billets de blog. Passons à l'étape 5</p>
+    <pre><code>git checkout -f step5</code></pre>
+
 </div>
