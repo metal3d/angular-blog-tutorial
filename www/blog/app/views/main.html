@@ -4,37 +4,15 @@
     <p>
     Voilà la page principale.
     </p>
+    <p>Maintenant on va lister les posts, en utilisant <code>Blog.getPosts</code> mais on va mettre en forme la liste</p>
+    <p>L'idée est d'utiliser <code>ng-repeat</code></p>
 
-    <p>J'ai créé le service "blog" via </p>
-    <pre><code>yo angular:service blog</code></pre>
-    <p>
-    Cela a créé app/services/blog.js. Allez voir le fichier.
-    </p>
-
-    <p>
-    Ce service retourne un objet contenant deux méthodes pour aller chercher des données sur un serveur web.
-    </p>
-
-    <p>
-    J'ai entrée un post de blog "manuellement" dans le fichier db/blog.json.
-    </p>
-
-    <p>
-    Enfin, dans le fichier "app/scripts/controllers/main.js" j'ai ajouté la dépendance au service "blog" et j'apppelle 
-    <code>getPosts()</code>
-    </p>
-    <pre><code>{{ posts | json }}</code></pre>
-
-    <p>
-    <strong>Attention</strong>, $resource retourne des promesses ! mais angular va interpréter le résultat au fur et à mesure
-    que les promesses sont résolues.
-    </p>
-
-    <p>Ici, on va chercher le post 1, via <code>getPost(1)</code></p>
-    <pre><code>{{ firstPost | json }}</code>
+    <p><code>b in posts</code> assigne un post dans "b" à chaque entreé de <code>$scope.posts</code></p>
+    <p>Tout se trouve dans app/scripts/main.js</p>
     </pre>
-
-    <p>On peut passer à step 3</p>
-    <pre><code>git checkout -f step3</code></pre>
-
+    <ul>
+        <li ng-repeat="b in posts">{{b.title}}</li>
+    </ul>
+    <p>On va passer à l'étape 4 pour faire une vue "blog post"</p>
+    <pre><code>git checkout -f step4</code></pre>
 </div>

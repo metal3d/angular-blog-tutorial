@@ -4,6 +4,11 @@
       "id": 1,
       "title": "Premier post",
       "content": "Contenu du post"
+    },
+    {
+      "id": 2,
+      "title": "Un autre post",
+      "content": "Contenu du post numéro 2"
     }
   ]
 }
