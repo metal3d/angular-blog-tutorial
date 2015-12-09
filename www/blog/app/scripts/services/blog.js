@@ -33,10 +33,18 @@ angular.module('blogApp')
         return $resource(server + endpoint + '/:id').get({id: id});
     }
     
+
+    // fonction pour sauver un post. Les méthodes $resource prennent en argument
+    // une fonction "sucess".
+    function savePost(data, success){
+        return $resource(server + endpoint).save(data, success);
+    }
+
     // on retourne un objet qui représente le service
     return {
         getPosts: getPosts,
-        getPost: getPost
+        getPost: getPost,
+        save : savePost
     };
 
   });
