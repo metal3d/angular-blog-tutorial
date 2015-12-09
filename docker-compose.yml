@@ -1,0 +1,18 @@
+blog:
+    build: ./docker/yo
+    volumes:
+    - ./www:/opt
+    working_dir: /opt
+    command: make
+    ports:
+    - 9000:9000
+    - 35729:35729
+
+db:
+    build: ./docker/json_server
+    volumes:
+    - ./db:/opt/db
+    working_dir: /opt/db
+    command: blog.json
+    ports:
+    - 3000:3000
