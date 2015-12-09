@@ -10,6 +10,9 @@ blog:
 
 db:
     build: ./docker/json_server
+    extends:
+        file: wraper.yml
+        service: wraper
     volumes:
     - ./db:/opt/db
     working_dir: /opt/db
