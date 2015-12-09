@@ -17,20 +17,19 @@ angular.module('blogApp')
     var server = 'http://localhost:3000';
     var endpoint = '/posts';
 
+    // configure notre resource
+    var resource = $resource(server + endpoint + '/:id?', {id: '@id'});
+
     // Fonction pour récupérer tous les message de blog
     function getPosts(){
-        // Dans la cas où le service retourne un tableau
-        // il faut préciser dans la configuration de l'appel
-        // que la méthode retournera un array.
-        return $resource(server + endpoint, null, {
-            'get' : {method: 'GET', isArray: true}
-        }).get();
+        // query() retourne une liste, alors que get() retourne une seule entrée.
+        return resource.query()
     }
 
 
     // retourne un post ayant un ID donné
     function getPost(id) {
-        return $resource(server + endpoint + '/:id').get({id: id});
+        return resource.get({id: id});
     }
     
     // on retourne un objet qui représente le service
