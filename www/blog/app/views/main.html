@@ -4,29 +4,19 @@
     <p>
     Voilà la page principale.
     </p>
+    <p>Dans app.js, on modifie la route <code>blog/edit</code> pour lui donner un paramètre optionnel (grâce à "?"), <code>blog/edit/:id?</code></p>
 
-    <p>Ajout de la route blogEdit:</p>
-    <pre><code>yo angular:route blogEdit --uri=blog/edit</code></pre>
+    <p>On va vérifier que <code>$routeParams</code> contient un identifiant, si oui on charge le billet dans le scope</p>
+    <p>Puisqu'on utiliser ng-model, les valeurs de <code>$scope.post</code> vont s'afficher dans le formulaire.</p>
 
-    <p>Nous avons maintenant un controller pour créer un post de blog dans controllers/blogedit.js</p>
-    <p>Une vue a aussi été créée, dans views/blogedit.html</p>
-    <p>Dans app.js, j'ai déplacé cette route pour qu'elle ne soit pas surchargé par "blog/:id"</p>
 
-    <p>Le service Blog a aussi une nouvelle méthode pour sauver un billet</p>
-
-    <p>Dans le formulaire, on utiliser <code>ng-model</code> pour "binder" des champs du scope à un "input". Quand la vue change la valeur du champs, le scope est modifié. C'est le principe du "two way data-binding".</p>
-
-    <p>Le formulaire utilise <code>ng-submit</code> ce qui a pour effet d'attacher l'évènement de sousmission à l'appel de fonction. Cette fonction est attéchée au scope dans le controller (constollers/blogedit.js). Cette fonction appelle simplement la nouvelle méthode de service "Blog.save()"</p>
-
-    <p>Aller voir: <a href="#blog/edit">la page de creation de ticket</a> pour créer un nouveau billet.</p>
-
-    <p>Comme toujours la liste des billets</p>
-    <ul>
-        <li ng-repeat="post in posts"><a ng-href="#/blog/{{post.id}}">{{ post.title }}</a></li>
+    <h2>Les posts</h2>
+    <ul class="list-group">
+        <li class=" clearfix list-group-item" ng-repeat='post in posts'><a ng-href="#/blog/{{ post.id }}">{{ post.title }}</a>
+            <span class="pull-right">
+                <a ng-href="#/blog/edit/{{post.id}}" class="btn btn-default glyphicon"><span class="glyphicon-pencil"></span></a>
+            </span>
+        </li>
     </ul>
-
-
-    <p>Nous allons permettre l'édition de billet existant, passez à l'étape 6</p>
-    <pre><code>git checkout -f step6 &amp;&amp; docker-compose restart</code></pre>
-
+    <pre><code>git checkout -f step7 &amp;&amp; docker-compose restart</code></pre>
 </div>

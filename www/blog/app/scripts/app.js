@@ -29,7 +29,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/blog/edit', {
+      .when('/blog/edit/:id?', {
         templateUrl: 'views/blogedit.html',
         controller: 'BlogeditCtrl',
         controllerAs: 'blogEdit'
