@@ -10,6 +10,9 @@
     <p>Puisqu'on utiliser ng-model, les valeurs de <code>$scope.post</code> vont s'afficher dans le formulaire.</p>
 
 
+    <div class="clearfix pull-right">
+        <a class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> New</a>
+    </div>
     <h2>Les posts</h2>
     <ul class="list-group">
         <li class=" clearfix list-group-item" ng-repeat='post in posts'><a ng-href="#/blog/{{ post.id }}">{{ post.title }}</a>
