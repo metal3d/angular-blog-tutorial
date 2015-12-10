@@ -47,7 +47,7 @@ angular.module('blogApp')
     return {
         getPosts: getPosts,
         getPost: getPost,
-        save : savePost
+        save: savePost
     };
 
   });
