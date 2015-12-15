@@ -2,14 +2,17 @@
 <div class="row">
     <h1>Page d'accueil</h1>
     <p>
-    Voilà la page principale.
+    Dans app.js, on modifie la route <code>blog/edit</code> dans "app.js"
+    pour lui donner un paramètre optionnel (grâce à "?"), <code>blog/edit/:id?</code>
     </p>
-    <p>Dans app.js, on modifie la route <code>blog/edit</code> pour lui donner un paramètre optionnel (grâce à "?"), <code>blog/edit/:id?</code></p>
 
-    <p>On va vérifier que <code>$routeParams</code> contient un identifiant, si oui on charge le billet dans le scope</p>
+    <p>On va vérifier que <code>$routeParams</code> dans le controlleur <code>controllers/blogedit.js</code> contient un identifiant, si oui on charge le billet dans le scope</p>
     <p>Puisqu'on utiliser ng-model, les valeurs de <code>$scope.post</code> vont s'afficher dans le formulaire.</p>
 
 
+    <div class="clearfix pull-right">
+        <a href="#/blog/edit" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> New</a>
+    </div>
     <h2>Les posts</h2>
     <ul class="list-group">
         <li class=" clearfix list-group-item" ng-repeat='post in posts'><a ng-href="#/blog/{{ post.id }}">{{ post.title }}</a>
