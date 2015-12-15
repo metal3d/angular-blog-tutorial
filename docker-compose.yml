@@ -1,15 +1,14 @@
 blog:
-    build: ./docker/yo
+    image: metal3d/angular-yeoman
     volumes:
-    - ./www:/opt
+    - ./www/blog:/opt
     working_dir: /opt
-    command: make
     ports:
     - 9000:9000
     - 35729:35729
 
 db:
-    build: ./docker/json_server
+    image: metal3d/json-server
     extends:
         file: wraper.yml
         service: wraper
