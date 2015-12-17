@@ -6,6 +6,9 @@ blog:
     ports:
     - 9000:9000
     - 35729:35729
+    extends:
+        file: wraper.yml
+        service: wraper
 
 db:
     image: metal3d/json-server
