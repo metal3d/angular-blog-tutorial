@@ -9,8 +9,8 @@ serve: init
 init:
 	echo "wraper:" > $(WRAPER)
 	echo '    user: "$(UID):$(GID)"' >> $(WRAPER)
-	echo '    environment:' >> $(WRAPER)
 ifdef http_proxy
+	echo '    environment:' >> $(WRAPER)
 	echo '        http_proxy: $(http_proxy)' >> $(WRAPER)
 	echo '        https_proxy: $(http_proxy)' >> $(WRAPER)
 	echo '        HTTP_PROXY: $(http_proxy)' >> $(WRAPER)
